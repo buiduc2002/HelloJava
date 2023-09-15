@@ -11,22 +11,22 @@ public class Main {
         int num2 = scanner.nextInt();
 
         if (gcd(num1, num2) == 1) {
-            System.out.printf(num1, num2);
+            System.out.print("ngto cung nhau");
+
         } else {
-            System.out.printf( num1, num2);
+            System.out.print("ko ngto cung nhau");
         }
 
         scanner.close();
     }
 
     private static int gcd(int num1, int num2) {
-        if (num1 == 0) {
-            return num2;
-        } else if (num2 == 0) {
-            return num1;
-        } else {
-            int remainder = num1 % num2;
-            return gcd(num2, remainder);
+        while (num2 != 0) {
+            int tmp = num2;
+            num2 = num1 % num2;
+            num1 = tmp;
         }
+        return num1;
+    
     }
 }
